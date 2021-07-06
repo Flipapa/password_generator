@@ -3,22 +3,12 @@ function sample(array) {
   return array[randomIndex]
 }
 
-function generatePassword() {
+function generatePassword(options) {
   // Define source of password
   const lowerCaseLetters = 'abcdefghijklmnopqrstuvwxyz'
   const upperCaseLetters = lowerCaseLetters.toUpperCase()
   const numbers = '1234567890'
   const symbols = '`~!@$%^&*()-_+={}[]|;:"<>,.?/'
-
-  // Define dummy data
-  options = {
-    length: '15',
-    lowercase: 'on',
-    uppercase: 'on',
-    numbers: 'on',
-    symbols: 'on',
-    excludeCharacters: 'kduen'
-  }
 
   // Create a collection to store picked up sources
   let collection = []
@@ -58,4 +48,5 @@ function generatePassword() {
   return password
 }
 
-generatePassword()
+// Export generatePassword function for other files to use
+module.exports = generatePassword
