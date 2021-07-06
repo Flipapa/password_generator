@@ -37,6 +37,11 @@ function generatePassword(options) {
     )
   }
 
+  // Return error notice if collection is empty
+  if (collection.length === 0) {
+    return `There is no valid character in your selection.`
+  }
+
   // Generate password
   let password = ''
 
